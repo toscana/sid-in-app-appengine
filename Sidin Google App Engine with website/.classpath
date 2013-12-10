@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Bert/Documents/android/workspace/Sidin Google App Engine/war/WEB-INF/lib/objectify-4.0a4.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Bert/Documents/android/workspace/Sidin Google App Engine/war/WEB-INF/lib/org.restlet.ext.jackson.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Bert/Documents/android/workspace/Sidin Google App Engine/war/WEB-INF/lib/org.restlet.ext.json.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Bert/Documents/android/workspace/Sidin Google App Engine/war/WEB-INF/lib/org.restlet.ext.servlet.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Bert/Documents/android/workspace/Sidin Google App Engine/war/WEB-INF/lib/org.restlet.ext.xml.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Bert/Documents/android/workspace/Sidin Google App Engine/war/WEB-INF/lib/org.restlet.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Bert/Documents/android/workspace/Sidin Google App Engine/war/WEB-INF/lib/org.codehaus.jackson.core.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Bert/Documents/android/workspace/Sidin Google App Engine/war/WEB-INF/lib/org.codehaus.jackson.mapper.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Bert/Documents/android/workspace/Sidin Google App Engine/war/WEB-INF/lib/org.json.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="con" path="com.google.appengine.eclipse.core.GAE_CONTAINER"/>
+	<classpathentry kind="output" path="war/WEB-INF/classes"/>
+</classpath>
