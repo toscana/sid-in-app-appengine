@@ -9,6 +9,7 @@ import org.restlet.resource.ServerResource;
 
 import be.ehb.iwt.sidin.appengine.core.Image;
 import be.ehb.iwt.sidin.appengine.core.ImageList;
+import be.ehb.iwt.sidin.appengine.core.ImageVersion;
 
 public class ImageServerResource extends ServerResource implements
 		IImageResource {
@@ -17,6 +18,18 @@ public class ImageServerResource extends ServerResource implements
 	@Post
 	public void store(Image i) {
 		OfyService.ofy().save().entities(i).now();
+		
+		
+		ImageVersion v = OfyService.ofy().load().type(ImageVersion.class).first().get();
+		if(v != null){
+			v.increase();
+			OfyService.ofy().save().entities(v).now();
+		}
+		else{
+			v = new ImageVersion();
+			OfyService.ofy().save().entities(v).now();
+		}
+			
 	}
 
 	@Override
@@ -33,6 +46,16 @@ public class ImageServerResource extends ServerResource implements
 		Long value  = Long.parseLong((String)getRequest().getAttributes().get("id"));
 		Image i = OfyService.ofy().load().type(Image.class).id(value).get();
 		OfyService.ofy().delete().entity(i);
+		
+		ImageVersion v = OfyService.ofy().load().type(ImageVersion.class).first().get();
+		if(v != null){
+			v.increase();
+			OfyService.ofy().save().entities(v).now();
+		}
+		else{
+			v = new ImageVersion();
+			OfyService.ofy().save().entities(v).now();
+		}
 	}
 
 }

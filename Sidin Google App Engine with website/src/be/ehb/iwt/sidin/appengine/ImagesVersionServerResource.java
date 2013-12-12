@@ -9,13 +9,15 @@ import org.restlet.resource.ServerResource;
 
 import be.ehb.iwt.sidin.appengine.core.Image;
 import be.ehb.iwt.sidin.appengine.core.ImageList;
+import be.ehb.iwt.sidin.appengine.core.ImageVersion;
 
-public class ImageCountServerResource extends ServerResource implements
-		IImageCountResource {
+public class ImagesVersionServerResource extends ServerResource implements
+		IImagesVersionResource {
 
 	public Integer retrieve() {
-		List<Image> images = OfyService.ofy().load().type(Image.class).list();
-		ImageList list = new ImageList(images);
-		return new Integer(list.getImages().size());
+		
+		ImageVersion im = OfyService.ofy().load().type(ImageVersion.class).first().get();
+		
+		return new Integer(im.getVersion());
 	}
 }

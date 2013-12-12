@@ -6,6 +6,7 @@ import java.io.Serializable;
 
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
+import com.googlecode.objectify.annotation.Index;
 
 
 @Entity
@@ -21,6 +22,8 @@ public class Teacher implements Serializable{
 	}
 	@Id private Long id;
 	private String name;
+	
+	@Index
 	private int acadyear;
 	
 	public String getName() {

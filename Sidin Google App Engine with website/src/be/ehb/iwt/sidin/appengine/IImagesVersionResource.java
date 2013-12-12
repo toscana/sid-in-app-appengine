@@ -9,7 +9,7 @@ import be.ehb.iwt.sidin.appengine.core.Image;
 import be.ehb.iwt.sidin.appengine.core.ImageList;
 
 
-public interface IImageCountResource {
+public interface IImagesVersionResource {
 	
 	@Get
 	public Integer retrieve();

@@ -12,6 +12,7 @@ public class TeacherServerResource extends ServerResource implements
 	@Override
 	@Get
 	public Teacher retrieve() {
+				
 		Long value = Long.parseLong((String) getRequest().getAttributes().get("id"));
 		Teacher t = OfyService.ofy().load().type(Teacher.class).id(value).get();
 		return t;

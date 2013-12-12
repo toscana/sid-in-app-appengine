@@ -13,6 +13,9 @@ public class ServerApplication extends Application{
 		Router router = new Router(getContext());
 		router.attachDefault(new Directory(getContext(),"war:///"));
 		router.attach("/teachers",TeachersServerResource.class);
+		router.attach("/teachers/{year}",TeachersServerResource.class);
+		
+		
 		router.attach("/teacher", TeacherServerResource.class);
 		router.attach("/teacher/{id}", TeacherServerResource.class);
 		
@@ -28,7 +31,8 @@ public class ServerApplication extends Application{
 		router.attach("/image",ImageServerResource.class);
 		router.attach("/image/{id}",ImageServerResource.class);
 		router.attach("/images",ImageServerResource.class);
-		router.attach("/nbimages",ImageCountServerResource.class);
+		
+		router.attach("/imagesversion",ImagesVersionServerResource.class);
 				
 		return router;
 	}

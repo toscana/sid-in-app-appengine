@@ -2,6 +2,7 @@ package be.ehb.iwt.sidin.appengine;
 
 import be.ehb.iwt.sidin.appengine.core.Event;
 import be.ehb.iwt.sidin.appengine.core.Image;
+import be.ehb.iwt.sidin.appengine.core.ImageVersion;
 import be.ehb.iwt.sidin.appengine.core.Subscription;
 import be.ehb.iwt.sidin.appengine.core.Teacher;
 
@@ -16,6 +17,7 @@ public class OfyService {
 		factory().register(Event.class);
 		factory().register(Subscription.class);
 		factory().register(Image.class);
+		factory().register(ImageVersion.class);
 	}
 
 	public static Objectify ofy() {
