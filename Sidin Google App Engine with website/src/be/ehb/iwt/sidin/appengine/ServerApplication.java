@@ -20,6 +20,8 @@ public class ServerApplication extends Application{
 		router.attach("/teacher/{id}", TeacherServerResource.class);
 		
 		router.attach("/events",EventsServerResource.class);
+		router.attach("/events/{year}",EventsServerResource.class);
+		
 		router.attach("/event", EventServerResource.class);
 		router.attach("/event/{id}",EventServerResource.class);
 		
