@@ -20,8 +20,8 @@ public class Teacher implements Serializable{
 	public Long getId() {
 		return id;
 	}
-	@Id private Long id;
-	private String name;
+	@Id @Index private Long id;
+	@Index private String name;
 	
 	@Index
 	private int acadyear;

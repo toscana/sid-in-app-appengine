@@ -5,6 +5,7 @@ import java.io.Serializable;
 
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
+import com.googlecode.objectify.annotation.Index;
 
 @Entity
 public class Event implements Serializable {
@@ -13,7 +14,7 @@ public class Event implements Serializable {
 	 */
 	private static final long serialVersionUID = 2383629800536599520L;
 	
-	@Id private Long id;
+	@Id @Index private Long id;
 	public Long getId() {
 		return id;
 	}
@@ -26,8 +27,8 @@ public class Event implements Serializable {
 		this.name = name;
 		this.acadyear = acadyear;
 	}
-	private String name;
-	private int acadyear;
+	@Index private String name;
+	@Index private int acadyear;
 	
 	public Event(String name, int acadyear) {
 		super();

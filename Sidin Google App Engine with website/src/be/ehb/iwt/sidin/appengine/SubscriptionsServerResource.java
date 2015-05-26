@@ -6,6 +6,7 @@ import org.restlet.resource.ServerResource;
 import org.restlet.resource.Get;
 
 import be.ehb.iwt.sidin.appengine.core.Event;
+import be.ehb.iwt.sidin.appengine.core.School;
 import be.ehb.iwt.sidin.appengine.core.Subscription;
 import be.ehb.iwt.sidin.appengine.core.SubscriptionList;
 import be.ehb.iwt.sidin.appengine.core.Teacher;
@@ -22,10 +23,13 @@ public class SubscriptionsServerResource extends ServerResource implements
 		for(Subscription s:subs){
 			Long teachID = s.getTeacher().getId();
 			Long eventID = s.getEvent().getId();
+			Long schoolID = s.getSchool().getId();
 			Teacher t = OfyService.ofy().load().type(Teacher.class).filter("id",teachID).first().get();
 			Event e = OfyService.ofy().load().type(Event.class).filter("id",eventID).first().get();
+			School school = OfyService.ofy().load().type(School.class).filter("id",schoolID).first().get();
 			s.setTeacher(t);
 			s.setEvent(e);
+			s.setSchool(school);
 		}				
 		list.setSubscriptions(subs);
 		return list;

@@ -6,6 +6,7 @@ import java.util.HashMap;
 
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
+import com.googlecode.objectify.annotation.Index;
 
 @Entity
 public class Subscription implements Serializable {
@@ -20,25 +21,26 @@ public class Subscription implements Serializable {
 
 	@Id private Long id;
 	private String firstName;
-	private String lastName;
-	private String email;
+	@Index private String lastName;
+	@Index private String email;
 	private String street;
 	private String streetNumber;
-	private int zip;
+	@Index private String zip;
 	private String city;
 	private HashMap<String,String> interests;
 	private Date timestamp;
 	private Teacher teacher;
 	private Event event;
 	private boolean isNew;
+	private School school;
 	
 	
 	
 	
 	public Subscription(Long id, String firstName, String lastName,
-			String email, String street, String streetNumber, int zip,
+			String email, String street, String streetNumber, String zip,
 			String city, HashMap<String, String> interests, Date timestamp,
-			Teacher teacher, Event event, boolean isNew) {
+			Teacher teacher, Event event, boolean isNew,School school) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
@@ -53,14 +55,15 @@ public class Subscription implements Serializable {
 		this.teacher = teacher;
 		this.event = event;
 		this.isNew = isNew;
+		this.school = school;
 	}
 
 
 
 	public Subscription(String firstName, String lastName, String email,
-			String street, String streetNumber, int zip, String city,
+			String street, String streetNumber, String zip, String city,
 			HashMap<String, String> interests, Date timestamp, Teacher teacher,
-			Event event, boolean isNew) {
+			Event event, boolean isNew,School school) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -74,6 +77,19 @@ public class Subscription implements Serializable {
 		this.teacher = teacher;
 		this.event = event;
 		this.isNew = isNew;
+		this.school = school;
+	}
+
+
+
+	public School getSchool() {
+		return school;
+	}
+
+
+
+	public void setSchool(School school) {
+		this.school = school;
 	}
 
 
@@ -124,11 +140,11 @@ public class Subscription implements Serializable {
 		this.streetNumber = streetNumber;
 	}
 
-	public int getZip() {
+	public String getZip() {
 		return zip;
 	}
 
-	public void setZip(int zip) {
+	public void setZip(String zip) {
 		this.zip = zip;
 	}
 
